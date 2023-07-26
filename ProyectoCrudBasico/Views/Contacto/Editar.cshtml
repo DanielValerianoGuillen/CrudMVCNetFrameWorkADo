@@ -1,0 +1,42 @@
+﻿@model ProyectoCrudBasico.Models.Contacto
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top: 30px;">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Editar contacto</h4>
+            </div>
+            <div class="card-body">
+                <form action="@Url.Action("Editar","Contacto")" method="post">
+                    <input type="hidden" name="IdContacto" value="@Html.DisplayTextFor(m => m.IdContacto)" />
+                    <div class="mb-3">
+                        <label for="nombres" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="nombres" name="Nombres" value="@Html.DisplayTextFor(m => m.Nombres)" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" name="Apellidos" value="@Html.DisplayTextFor(m => m.Apellidos)" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" id="telefono" name="Telefono" value="@Html.DisplayTextFor(m => m.Telefono)" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input type="text" class="form-control" id="correo" name="Correo" value="@Html.DisplayTextFor(m => m.Correo)" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a class="btn btn-warning" href="@Url.Action("Inicio","Contacto")">Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
